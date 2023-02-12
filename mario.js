@@ -20,13 +20,14 @@ console.log(printPyramid(userInput));
  *       #####
  *      ######
  */
+
 function printPyramid(height) {
   console.log("Uh oh... the pyramid is under construction.");
   console.log("Check back soon, our developers are hard at work as we speak!");
   let str = "";
   for (let i = 0; i < height; i++) {
     for (let j = 0; j< height-i; j++) {
-      str += " "
+      str += "."
     }
     for(let k = 0; k<=i+1; k++){
       str += "#";
@@ -34,5 +35,12 @@ function printPyramid(height) {
     str += "\n";
   }
   
+  document.getElementById('blocks').innerHTML = str;
   return str;
 }
+
+
+
+// TODO 1
+        // create an element whose inner text is rowStr,
+        // and insert it as a child of the container <div id="pyramid">
