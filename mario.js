@@ -1,16 +1,21 @@
 
-let userInput = prompt("Enter the height: ");
-console.log(printPyramid(userInput));
+let button = document.querySelector('.btn');
 
+button.addEventListener("click", () => {
+
+let x = document.getElementById("height").value;
+
+return printPyramid(x);
+});
 
 function printPyramid(height) {
-  console.log("Uh oh... the pyramid is under construction.");
-  console.log("Check back soon, our developers are hard at work as we speak!");
-  let str = "";
-  let element = document.getElementById("pyramid")
-  let para
-  let node 
-  
+  let parent = document.getElementById("pyramid");
+  parent.replaceChildren();
+  let str;
+  let elementPyramid = document.getElementById("pyramid");
+  let para;
+  let node ;
+
   for (let i = 0; i < height; i++) {
       str=""
     for (let j = 0; j< height-i; j++) {
@@ -23,15 +28,7 @@ function printPyramid(height) {
     node = document.createTextNode(str)
     para = document.createElement("p")
     para.append(node)
-    element.append(para)
+    elementPyramid.append(para)
   }
   return str;
 }
-
-   
-    
-
-
-// TODO 1
-        // create an element whose inner text is rowStr,
-        // and insert it as a child of the container <div id="pyramid">
