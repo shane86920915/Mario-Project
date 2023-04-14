@@ -1,5 +1,3 @@
-
-
 var heightElem = document.getElementById("height");
 var formElem = document.getElementById("draw-form");
 
@@ -24,26 +22,23 @@ formElem.onsubmit = function(event) {
     // TODO 1
     // if they didn't type anything at all, give a different error message,
     // something like "Please provide a height"
-    
-
-    if (heightStr === ""){
-      displayError("Please provide a height.");
-      return;
+    if (heightStr === "") {
+        displayError("Please provide a height.");
+        return;
     }
+
     // convert the string to an int
     height = parseInt(heightStr);
 
-    if (heightStr < 1){
-      displayError("Please provide a number between 1 and 100");
-      return;
+    if (heightStr < 1) {
+        displayError("Please provide a number between 1 and 100");
+        return;
     }
-
 
     // if the height is not-a-number, yell at them and exit early
     // TODO 2
     // negative numbers and zero should also be rejected here
     if (isNaN(height)) {
-        
         displayError("That's not a valid height.");
         return;
     }
@@ -57,7 +52,7 @@ formElem.onsubmit = function(event) {
 
     // draw pyramid with the specified height
     drawPyramid(height);
-}
+};
 
 
 /**
@@ -81,9 +76,8 @@ function clearError() {
     // implement this function.
     var errorElem = document.querySelector(".error-message");
     errorElem.innerHTML = "";
-   heightElem.classList.remove("invalid-field");
+    heightElem.classList.remove("invalid-field");
 }
-
 
 
 /**
